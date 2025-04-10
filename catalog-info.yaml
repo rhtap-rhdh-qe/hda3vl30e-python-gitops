@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hda3vl30e-python-gitops
+  description: This is GitOps manifest for hda3vl30e-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hda3vl30e-python
+    backstage.io/kubernetes-id: hda3vl30e-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hda3vl30e-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hda3vl30e-python
